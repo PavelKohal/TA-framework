@@ -1,0 +1,8 @@
+page\SearchResultsPage.class
+page\EstimatePage.class
+test\MainTest.class
+test\CommonConditions.class
+driver\DriverSingleton.class
+page\CalculatorPage.class
+page\TemporaryEmailPage.class
+page\GoogleCloudMainPage.class
