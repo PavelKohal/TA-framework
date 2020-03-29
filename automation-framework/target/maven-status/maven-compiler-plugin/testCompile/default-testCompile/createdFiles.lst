@@ -6,3 +6,4 @@ driver\DriverSingleton.class
 page\CalculatorPage.class
 page\TemporaryEmailPage.class
 page\GoogleCloudMainPage.class
+test\SmokeTest.class

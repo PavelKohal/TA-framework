@@ -50,6 +50,14 @@ public class EstimatePage {
         return new TemporaryEmailPage(driver);
     }
 
+    public TemporaryEmailPage clickEmailEstimateButtonAndGetCost() {
+        new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(emailEstimateButton));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", emailEstimateButton);
+
+
+        return new TemporaryEmailPage(driver);
+    }
+
     public TemporaryEmailPage addEmail() {
         driver.switchTo().frame(firstFrameEmail).switchTo().frame(secondFrameEmail);
         new WebDriverWait(driver, 10)

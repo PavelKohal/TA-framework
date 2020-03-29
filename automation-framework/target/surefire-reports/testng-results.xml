@@ -1,25 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="test.MainTest" duration-ms="51838" started-at="2020-03-27T08:36:00Z" finished-at="2020-03-27T08:36:52Z">
+  <suite name="Command line suite" duration-ms="88060" started-at="2020-03-29T10:59:16Z" finished-at="2020-03-29T11:00:44Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="51838" started-at="2020-03-27T08:36:00Z" finished-at="2020-03-27T08:36:52Z">
-      <class name="test.MainTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:test.MainTest@67b64c45]" name="setUp" is-config="true" duration-ms="5555" started-at="2020-03-27T08:36:00Z" finished-at="2020-03-27T08:36:06Z">
+    <test name="Command line test" duration-ms="88060" started-at="2020-03-29T10:59:16Z" finished-at="2020-03-29T11:00:44Z">
+      <class name="test.SmokeTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:test.SmokeTest@79b4d0f]" name="setUp" is-config="true" duration-ms="4035" started-at="2020-03-29T11:00:11Z" finished-at="2020-03-29T11:00:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="compareCostsFromDifferentSources()[pri:0, instance:test.MainTest@67b64c45]" name="compareCostsFromDifferentSources" duration-ms="45224" started-at="2020-03-27T08:36:06Z" description="compare the cost of rent in the received letter and on the website" finished-at="2020-03-27T08:36:51Z">
+        <test-method status="PASS" signature="compareEstimatedCostAndCostFromManualTest()[pri:0, instance:test.SmokeTest@79b4d0f]" name="compareEstimatedCostAndCostFromManualTest" duration-ms="28664" started-at="2020-03-29T11:00:15Z" description="compare cost of rent on the website and cost from manual test" finished-at="2020-03-29T11:00:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- compareEstimatedCostAndCostFromManualTest -->
+        <test-method status="PASS" signature="browserTearDown()[pri:0, instance:test.SmokeTest@79b4d0f]" name="browserTearDown" is-config="true" duration-ms="952" started-at="2020-03-29T11:00:43Z" finished-at="2020-03-29T11:00:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserTearDown -->
+      </class> <!-- test.SmokeTest -->
+      <class name="test.MainTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:test.MainTest@3fb6a447]" name="setUp" is-config="true" duration-ms="5975" started-at="2020-03-29T10:59:16Z" finished-at="2020-03-29T10:59:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="compareCostsFromDifferentSources()[pri:0, instance:test.MainTest@3fb6a447]" name="compareCostsFromDifferentSources" duration-ms="47094" started-at="2020-03-29T10:59:22Z" description="compare the cost of rent in the received letter and on the website" finished-at="2020-03-29T11:00:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- compareCostsFromDifferentSources -->
-        <test-method status="PASS" signature="browserTearDown()[pri:0, instance:test.MainTest@67b64c45]" name="browserTearDown" is-config="true" duration-ms="1011" started-at="2020-03-27T08:36:51Z" finished-at="2020-03-27T08:36:52Z">
+        <test-method status="PASS" signature="browserTearDown()[pri:0, instance:test.MainTest@3fb6a447]" name="browserTearDown" is-config="true" duration-ms="1286" started-at="2020-03-29T11:00:09Z" finished-at="2020-03-29T11:00:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserTearDown -->
       </class> <!-- test.MainTest -->
     </test> <!-- Command line test -->
-  </suite> <!-- test.MainTest -->
+  </suite> <!-- Command line suite -->
 </testng-results>
