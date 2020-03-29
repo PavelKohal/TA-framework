@@ -1,9 +1,11 @@
 page\SearchResultsPage.class
-page\EstimatePage.class
+model\CloudPlatformSpecification.class
 test\MainTest.class
 test\CommonConditions.class
-driver\DriverSingleton.class
 page\CalculatorPage.class
 page\TemporaryEmailPage.class
-page\GoogleCloudMainPage.class
+service\SpecificationCreator.class
 test\SmokeTest.class
+page\EstimatePage.class
+driver\DriverSingleton.class
+page\GoogleCloudMainPage.class

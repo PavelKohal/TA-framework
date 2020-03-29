@@ -1,5 +1,7 @@
 package page;
 
+import model.CloudPlatformSpecification;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,8 +14,6 @@ public class CalculatorPage {
 
     WebDriver driver;
     public static String costOnPage;
-
-    private static final String NUMBER_OF_INSTANCE = "4";
 
     public CalculatorPage(WebDriver driver) {
         this.driver = driver;
@@ -32,62 +32,52 @@ public class CalculatorPage {
     @FindBy (id = "input_55")
     WebElement inputLineNumberOfInstances;
 
-    @FindBy (id = "select_value_label_48")
-    WebElement choiceOfOperationSystem;
 
-    @FindBy (id = "select_option_57")
-    WebElement desiredOperationSystem;
+
+    @FindBy (id = "select_value_label_48")
+    WebElement operationSystemSelect;
+    //By operationSystemLocator = By.xpath(String.format("//md-option/div[contains(text(), '%s')]", "Free: Debian, CentOS, CoreOS, Ubuntu, or other User Provided OS"));
 
     @FindBy (id = "select_value_label_49")
-    WebElement choiceOfMachineClass;
-
-    @FindBy (id = "select_option_69")
-    WebElement desiredMachineClass;
+    WebElement machineClassSelect;
+    By machineClassLocator = By.xpath(String.format("//div[@id='select_container_72']//div[contains(text(), '%s')]", "Regular"));
 
     @FindBy (id = "select_value_label_52")
-    WebElement choiceOfInstanceType;
-
-    @FindBy (id = "select_option_208")
-    WebElement desiredInstanceType;
+    WebElement machineTypeSelect;
+    By machineTypeLocator = By.xpath(String.format("//md-option/div[contains(text(), '%s')]", "n1-standard-8 (vCPUs: 8, RAM: 30GB)"));
 
     @FindBy (xpath = "//md-checkbox[@aria-label='Add GPUs']")
     WebElement addGPUChexkbox;
 
     @FindBy (id = "select_value_label_326")
-    WebElement choiceOfNumberOfGPUs;
-
-    @FindBy (id = "select_option_333")
-    WebElement desiredNumberOfGPUs;
+    WebElement numberOfGPUsSelect;
+    By numberOfGPUsLocator = By.xpath(String.format("//div[@id='select_container_329']//md-option/div[contains(text(), '%s')]", "1"));
 
     @FindBy (id = "select_value_label_327")
-    WebElement choiceOfGPUType;
-
-    @FindBy (id = "select_option_340")
-    WebElement desiredGPUType;
+    WebElement typeOfGPUSelect;
+    By typeOfGPULocator = By.xpath(String.format("//md-option/div[contains(text(),'%s')]", "NVIDIA Tesla V100"));
 
     @FindBy (id = "select_value_label_166")
-    WebElement choiceOfLocalSSD;
-
-    @FindBy (id = "select_option_229")
-    WebElement desiredLocalSSD;
+    WebElement localSSDSelect;
+    By localSSDLocator = By.xpath(String.format("//md-option/div[contains(text(),'%s')]", "2x375 GB"));
 
     @FindBy (id = "select_value_label_53")
-    WebElement choiceOfLocation;
-
-    @FindBy (id = "select_option_177")
-    WebElement desiredLocation;
+    WebElement datacenterLocationSelect;
+    By datacenterLocationLocator = By.xpath(String.format("//div[@id='select_container_83']//md-option/div[contains(text(),'%s')]", "Frankfurt (europe-west3)"));
 
     @FindBy (id = "select_value_label_54")
-    WebElement choiceOfCommittedUsage;
+    WebElement committedUsageSelect;
+    By committedUsageLocator = By.xpath(String.format("//div[@id='select_container_90']//md-option/div[contains(text(),'%s')]", "1 Year"));
 
-    @FindBy (id = "select_option_87")
-    WebElement desiredCommittedUsage;
+
 
     @FindBy (xpath = "//button[@aria-label='Add to Estimate']")
     WebElement buttonAddToEstimate;
 
     @FindBy (xpath = "//*[@id='resultBlock']//h2[@class='md-title']")
     WebElement costOnPageDOMElement;
+
+
 
     public CalculatorPage clickComputerEngineButton() {
         driver.switchTo().frame(firstFrame).switchTo().frame(secondFrame);
@@ -96,32 +86,86 @@ public class CalculatorPage {
         return this;
     }
 
-    public CalculatorPage fillInNumberOfInstance() {
-        inputLineNumberOfInstances.sendKeys(NUMBER_OF_INSTANCE);
-        return this;
-    }
+    public EstimatePage fillInRequiredData(CloudPlatformSpecification testModel) {
+        inputLineNumberOfInstances.sendKeys(testModel.getNumberOfInstances());
 
-    public EstimatePage fillInRequiredData() {
-        expandSelectionOptionsAndSelectDesired(choiceOfOperationSystem, desiredOperationSystem);
-        expandSelectionOptionsAndSelectDesired(choiceOfMachineClass, desiredMachineClass);
-        expandSelectionOptionsAndSelectDesired(choiceOfInstanceType, desiredInstanceType);
-        clickCheckbox(addGPUChexkbox);
-        expandSelectionOptionsAndSelectDesired(choiceOfNumberOfGPUs, desiredNumberOfGPUs);
-        expandSelectionOptionsAndSelectDesired(choiceOfGPUType, desiredGPUType);
-        expandSelectionOptionsAndSelectDesired(choiceOfLocalSSD, desiredLocalSSD);
-        expandSelectionOptionsAndSelectDesired(choiceOfLocation, desiredLocation);
-        expandSelectionOptionsAndSelectDesired(choiceOfCommittedUsage, desiredCommittedUsage);
+
+
+        expandSelectionOptionsAndSelectDesired(operationSystemSelect, testModel.getOperationSystem());
+//        new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(operationSystemSelect));
+//        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", operationSystemSelect);
+//        WebElement desiredElementOperationSystem = new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(operationSystemLocator));
+//        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", desiredElementOperationSystem);
+
+
+
+        //expandSelectionOptionsAndSelectDesired(choiceOfMachineClass, desiredMachineClass);
+        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(machineClassSelect));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", machineClassSelect);
+        WebElement desiredElementMachineClass = new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(machineClassLocator));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", desiredElementMachineClass);
+
+
+        //expandSelectionOptionsAndSelectDesired(choiceOfInstanceType, desiredInstanceType);
+        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(machineTypeSelect));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", machineTypeSelect);
+        WebElement desiredElementInstanceType = new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(machineTypeLocator));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", desiredElementInstanceType);
+
+
+        if(testModel.isAddGPU()) {
+            clickCheckbox(addGPUChexkbox);
+        }
+
+ //       expandSelectionOptionsAndSelectDesired(choiceOfNumberOfGPUs, desiredNumberOfGPUs);
+        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(numberOfGPUsSelect));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", numberOfGPUsSelect);
+        WebElement desiredElementNumberOfGPUs = new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(numberOfGPUsLocator));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", desiredElementNumberOfGPUs);
+
+
+        //expandSelectionOptionsAndSelectDesired(choiceOfGPUType, desiredGPUType);
+        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(typeOfGPUSelect));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", typeOfGPUSelect);
+        WebElement desiredGPUType = new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(typeOfGPULocator));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", desiredGPUType);
+
+
+        //expandSelectionOptionsAndSelectDesired(choiceOfLocalSSD, desiredLocalSSD);
+        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(localSSDSelect));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", localSSDSelect);
+        WebElement desiredLocalSSD = new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(localSSDLocator));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", desiredLocalSSD);
+
+
+
+       // expandSelectionOptionsAndSelectDesired(datacenterLocationSelect, desiredLocation);
+        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(datacenterLocationSelect));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", datacenterLocationSelect);
+        WebElement desiredLocation = new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(datacenterLocationLocator));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", desiredLocation);
+
+
+        //expandSelectionOptionsAndSelectDesired(choiceOfCommittedUsage, desiredCommittedUsage);
+        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(committedUsageSelect));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", committedUsageSelect);
+        WebElement desiredCommittedUsage = new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(committedUsageLocator));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", desiredCommittedUsage);
+
+
         clickButton(buttonAddToEstimate);
+
         costOnPage = new WebDriverWait(driver, 10).until(ExpectedConditions
                 .visibilityOf(costOnPageDOMElement)).getText();
         return new EstimatePage(driver);
     }
 
-    public CalculatorPage expandSelectionOptionsAndSelectDesired(WebElement choice, WebElement desired) {
-        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(choice));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", choice);
-        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(desired));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", desired);
+    public CalculatorPage expandSelectionOptionsAndSelectDesired(WebElement element, String textElement) {
+        new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(element));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+        By elementLocator = By.xpath(String.format("//md-option/div[contains(text(), '%s')]", textElement));
+        WebElement selectOption = new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(elementLocator));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectOption);
         return this;
     }
 
