@@ -1,39 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Command line suite" duration-ms="94085" started-at="2020-03-29T19:25:26Z" finished-at="2020-03-29T19:27:00Z">
+  <suite name="Command line suite" duration-ms="40038" started-at="2020-03-29T20:24:22Z" finished-at="2020-03-29T20:25:02Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="94085" started-at="2020-03-29T19:25:26Z" finished-at="2020-03-29T19:27:00Z">
+    <test name="Command line test" duration-ms="40038" started-at="2020-03-29T20:24:22Z" finished-at="2020-03-29T20:25:02Z">
       <class name="test.SmokeTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:test.SmokeTest@79b4d0f]" name="setUp" is-config="true" duration-ms="3883" started-at="2020-03-29T19:26:17Z" finished-at="2020-03-29T19:26:21Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:test.SmokeTest@79b4d0f]" name="setUp" is-config="true" duration-ms="6600" started-at="2020-03-29T20:24:22Z" finished-at="2020-03-29T20:24:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="compareEstimatedCostAndCostFromManualTest()[pri:0, instance:test.SmokeTest@79b4d0f]" name="compareEstimatedCostAndCostFromManualTest" duration-ms="37237" started-at="2020-03-29T19:26:21Z" description="compare cost of rent on the website and cost from manual test" finished-at="2020-03-29T19:26:58Z">
+        <test-method status="PASS" signature="compareEstimatedCostAndCostFromManualTest()[pri:0, instance:test.SmokeTest@79b4d0f]" name="compareEstimatedCostAndCostFromManualTest" duration-ms="32438" started-at="2020-03-29T20:24:28Z" description="compare cost of rent on the website and cost from manual test" finished-at="2020-03-29T20:25:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- compareEstimatedCostAndCostFromManualTest -->
-        <test-method status="PASS" signature="browserTearDown()[pri:0, instance:test.SmokeTest@79b4d0f]" name="browserTearDown" is-config="true" duration-ms="1261" started-at="2020-03-29T19:26:58Z" finished-at="2020-03-29T19:27:00Z">
+        <test-method status="PASS" signature="browserTearDown()[pri:0, instance:test.SmokeTest@79b4d0f]" name="browserTearDown" is-config="true" duration-ms="940" started-at="2020-03-29T20:25:01Z" finished-at="2020-03-29T20:25:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserTearDown -->
       </class> <!-- test.SmokeTest -->
-      <class name="test.MainTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:test.MainTest@3fb6a447]" name="setUp" is-config="true" duration-ms="5948" started-at="2020-03-29T19:25:26Z" finished-at="2020-03-29T19:25:32Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="compareCostsFromDifferentSources()[pri:0, instance:test.MainTest@3fb6a447]" name="compareCostsFromDifferentSources" duration-ms="44501" started-at="2020-03-29T19:25:32Z" description="compare the cost of rent in the received letter and on the website" finished-at="2020-03-29T19:26:16Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- compareCostsFromDifferentSources -->
-        <test-method status="PASS" signature="browserTearDown()[pri:0, instance:test.MainTest@3fb6a447]" name="browserTearDown" is-config="true" duration-ms="1189" started-at="2020-03-29T19:26:16Z" finished-at="2020-03-29T19:26:17Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- browserTearDown -->
-      </class> <!-- test.MainTest -->
     </test> <!-- Command line test -->
   </suite> <!-- Command line suite -->
 </testng-results>

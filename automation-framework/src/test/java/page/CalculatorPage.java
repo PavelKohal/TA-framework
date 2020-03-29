@@ -78,7 +78,7 @@ public class CalculatorPage {
         expandSelectionOptionsAndSelectDesired(operationSystemSelect, testModel.getOperationSystem());
         selectDesiredMachineClass(machineClassSelect, testModel.getMachineClass());
         expandSelectionOptionsAndSelectDesired(machineTypeSelect, testModel.getMachineType());
-        if (testModel.isAddGPU()) {
+        if (testModel.getAddGPU().equals("on")) {
             clickCheckbox(addGPUChexkbox);
         }
         selectDesiredNumberOfGPU(numberOfGPUsSelect, testModel.getNumberGPU());

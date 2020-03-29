@@ -8,7 +8,7 @@ public class CloudPlatformSpecification {
     private String operationSystem;
     private String machineClass;
     private String machineType;
-    private boolean addGPU;
+    private String addGPU;
     private String numberGPU;
     private String GPUType;
     private String localSSD;
@@ -16,7 +16,7 @@ public class CloudPlatformSpecification {
     private String committedUsage;
 
     public CloudPlatformSpecification(String numberOfInstances, String operationSystem,
-                                      String machineClass, String machineType, boolean addGPU,
+                                      String machineClass, String machineType, String addGPU,
                                       String numberGPU, String GPUType, String localSSD,
                                       String datacenterLocation, String committedUsage) {
         this.numberOfInstances = numberOfInstances;
@@ -47,7 +47,7 @@ public class CloudPlatformSpecification {
         return machineType;
     }
 
-    public boolean isAddGPU() {
+    public String getAddGPU() {
         return addGPU;
     }
 

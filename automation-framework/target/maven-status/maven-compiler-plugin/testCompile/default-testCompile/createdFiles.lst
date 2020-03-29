@@ -7,5 +7,6 @@ page\TemporaryEmailPage.class
 service\SpecificationCreator.class
 test\SmokeTest.class
 page\EstimatePage.class
+service\TestDataReader.class
 driver\DriverSingleton.class
 page\GoogleCloudMainPage.class
