@@ -1,7 +1,5 @@
 package model;
 
-import java.util.Objects;
-
 public class CloudPlatformSpecification {
 
     private String numberOfInstances;
@@ -14,11 +12,12 @@ public class CloudPlatformSpecification {
     private String localSSD;
     private String datacenterLocation;
     private String committedUsage;
+    private String manualTestResult;
 
     public CloudPlatformSpecification(String numberOfInstances, String operationSystem,
                                       String machineClass, String machineType, String addGPU,
                                       String numberGPU, String GPUType, String localSSD,
-                                      String datacenterLocation, String committedUsage) {
+                                      String datacenterLocation, String committedUsage, String manualTestResult) {
         this.numberOfInstances = numberOfInstances;
         this.operationSystem = operationSystem;
         this.machineClass = machineClass;
@@ -29,6 +28,7 @@ public class CloudPlatformSpecification {
         this.localSSD = localSSD;
         this.datacenterLocation = datacenterLocation;
         this.committedUsage = committedUsage;
+        this.manualTestResult = manualTestResult;
     }
 
     public String getNumberOfInstances() {
@@ -69,5 +69,9 @@ public class CloudPlatformSpecification {
 
     public String getCommittedUsage() {
         return committedUsage;
+    }
+
+    public String getManualTestResult() {
+        return manualTestResult;
     }
 }

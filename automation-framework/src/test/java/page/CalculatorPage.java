@@ -74,6 +74,7 @@ public class CalculatorPage {
     }
 
     public EstimatePage fillInRequiredData(CloudPlatformSpecification testModel) {
+        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(inputLineNumberOfInstances));
         inputLineNumberOfInstances.sendKeys(testModel.getNumberOfInstances());
         expandSelectionOptionsAndSelectDesired(operationSystemSelect, testModel.getOperationSystem());
         selectDesiredMachineClass(machineClassSelect, testModel.getMachineClass());
@@ -128,12 +129,12 @@ public class CalculatorPage {
     }
 
     public void expandSelectToSearchForOption(WebElement element) {
-        new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(element));
+        new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOf(element));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
     }
 
     public void findAndSelectDesiredOption(By optionLocator) {
-        WebElement selectOption = new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(optionLocator));
+        WebElement selectOption = new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(optionLocator));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectOption);
     }
 

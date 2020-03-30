@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -100,6 +100,11 @@
                       <a href="#" panel-name="suite-Command_line_suite" class="show-methods passed suite-Command_line_suite"> (show)</a> <!-- show-methods passed suite-Command_line_suite -->
                     </span>
                     <div class="method-list-content passed suite-Command_line_suite">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="test.MainTest" hash-for-method="compareCostsFromDifferentSources">compareCostsFromDifferentSources</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="test.SmokeTest" hash-for-method="compareEstimatedCostAndCostFromManualTest">compareEstimatedCostAndCostFromManualTest</a> <!-- method navigator-link -->
@@ -130,6 +135,23 @@
                   <span class="method-name">compareEstimatedCostAndCostFromManualTest</span>
                   <em>
 (compare cost of rent on the website and cost from manual test)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Command_line_suite-class-passed -->
+          <div class="suite-Command_line_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">test.MainTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="compareCostsFromDifferentSources">
+                  </a> <!-- compareCostsFromDifferentSources -->
+                  <span class="method-name">compareCostsFromDifferentSources</span>
+                  <em>
+(compare the cost of rent in the received letter and on the website)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -187,16 +209,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'compareEstimatedCostAndCostFromManualTest')
-data.setCell(0, 2, 'test.SmokeTest')
-data.setCell(0, 3, 32438);
+data.setCell(0, 1, 'compareCostsFromDifferentSources')
+data.setCell(0, 2, 'test.MainTest')
+data.setCell(0, 3, 46763);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'compareEstimatedCostAndCostFromManualTest')
+data.setCell(1, 2, 'test.SmokeTest')
+data.setCell(1, 3, 29082);
 window.suiteTableData['Command_line_suite']= { tableData: data, tableDiv: 'times-div-Command_line_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 32 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Command_line_suite">
               </div> <!-- times-div-Command_line_suite -->
             </div> <!-- times-div -->
@@ -222,18 +248,33 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">test.SmokeTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">test.MainTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">compareEstimatedCostAndCostFromManualTest</span>
-                <span class="method-start">6601 ms</span>
+                <span class="method-name">compareCostsFromDifferentSources</span>
+                <span class="method-start">7969 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">browserTearDown</span>
-                <span class="method-start">39041 ms</span>
+                <span class="method-start">54733 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">test.SmokeTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">55850 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">compareEstimatedCostAndCostFromManualTest</span>
+                <span class="method-start">59787 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">browserTearDown</span>
+                <span class="method-start">88870 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

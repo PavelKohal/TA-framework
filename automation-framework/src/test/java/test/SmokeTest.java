@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 import page.CalculatorPage;
 import page.EstimatePage;
 import page.GoogleCloudMainPage;
-import page.TemporaryEmailPage;
 import service.SpecificationCreator;
 
 public class SmokeTest extends CommonConditions {
@@ -20,6 +19,6 @@ public class SmokeTest extends CommonConditions {
                 .selectDesiredSearchResult()
                 .clickComputerEngineButton()
                 .fillInRequiredData(testModel);
-        Assert.assertTrue(CalculatorPage.costOnPage.contains("1,082.77"));
+        Assert.assertTrue(CalculatorPage.costOnPage.contains(testModel.getManualTestResult()));
     }
 }

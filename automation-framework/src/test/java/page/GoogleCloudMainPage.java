@@ -29,7 +29,7 @@ public class GoogleCloudMainPage {
 
     public GoogleCloudMainPage openHomePage() {
         driver.get(HOMEPAGE_URL);
-        new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(searchButton));
+        new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(searchButton));
         return this;
     }
 

@@ -35,7 +35,7 @@ public class EstimatePage {
     @FindBy (xpath = "//*[@id='myFrame']")
     WebElement secondFrameEmail;
 
-    @FindBy (xpath = "//*[@id='input_395']")
+    @FindBy (xpath = "//input[@type='email']")
     WebElement emailField;
 
     @FindBy (xpath = "//button[@aria-label='Send Email']")
@@ -50,20 +50,12 @@ public class EstimatePage {
         return new TemporaryEmailPage(driver);
     }
 
-    public TemporaryEmailPage clickEmailEstimateButtonAndGetCost() {
-        new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(emailEstimateButton));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", emailEstimateButton);
-
-
-        return new TemporaryEmailPage(driver);
-    }
-
     public TemporaryEmailPage addEmail() {
         driver.switchTo().frame(firstFrameEmail).switchTo().frame(secondFrameEmail);
         new WebDriverWait(driver, 10)
                 .until(ExpectedConditions.visibilityOf(emailField));
         emailField.sendKeys(email);
-        new WebDriverWait(driver, 10)
+        new WebDriverWait(driver, 60)
                 .until(ExpectedConditions.elementToBeClickable(emailSendButton));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", emailSendButton);
         ArrayList<String> browserPages = new ArrayList<String>(driver.getWindowHandles());
