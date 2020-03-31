@@ -1,3 +1,4 @@
+utils\TestListener.class
 page\SearchResultsPage.class
 model\CloudPlatformSpecification.class
 test\MainTest.class

@@ -2,34 +2,34 @@
 <testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Command line suite" duration-ms="90021" started-at="2020-03-30T08:57:46Z" finished-at="2020-03-30T08:59:16Z">
+  <suite name="Command line suite" duration-ms="92438" started-at="2020-03-31T08:22:11Z" finished-at="2020-03-31T08:23:43Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="90021" started-at="2020-03-30T08:57:46Z" finished-at="2020-03-30T08:59:16Z">
+    <test name="Command line test" duration-ms="92438" started-at="2020-03-31T08:22:11Z" finished-at="2020-03-31T08:23:43Z">
       <class name="test.SmokeTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:test.SmokeTest@6b2fad11]" name="setUp" is-config="true" duration-ms="3937" started-at="2020-03-30T08:58:42Z" finished-at="2020-03-30T08:58:46Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:test.SmokeTest@64616ca2]" name="setUp" is-config="true" duration-ms="4078" started-at="2020-03-31T08:23:08Z" finished-at="2020-03-31T08:23:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="compareEstimatedCostAndCostFromManualTest()[pri:0, instance:test.SmokeTest@6b2fad11]" name="compareEstimatedCostAndCostFromManualTest" duration-ms="29082" started-at="2020-03-30T08:58:46Z" description="compare cost of rent on the website and cost from manual test" finished-at="2020-03-30T08:59:15Z">
+        <test-method status="PASS" signature="compareEstimatedCostAndCostFromManualTest()[pri:0, instance:test.SmokeTest@64616ca2]" name="compareEstimatedCostAndCostFromManualTest" duration-ms="30224" started-at="2020-03-31T08:23:12Z" description="compare cost of rent on the website and cost from manual test" finished-at="2020-03-31T08:23:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- compareEstimatedCostAndCostFromManualTest -->
-        <test-method status="PASS" signature="browserTearDown()[pri:0, instance:test.SmokeTest@6b2fad11]" name="browserTearDown" is-config="true" duration-ms="1026" started-at="2020-03-30T08:59:15Z" finished-at="2020-03-30T08:59:16Z">
+        <test-method status="PASS" signature="browserTearDown()[pri:0, instance:test.SmokeTest@64616ca2]" name="browserTearDown" is-config="true" duration-ms="953" started-at="2020-03-31T08:23:42Z" finished-at="2020-03-31T08:23:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserTearDown -->
       </class> <!-- test.SmokeTest -->
       <class name="test.MainTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:test.MainTest@79b4d0f]" name="setUp" is-config="true" duration-ms="7969" started-at="2020-03-30T08:57:46Z" finished-at="2020-03-30T08:57:54Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:test.MainTest@3b81a1bc]" name="setUp" is-config="true" duration-ms="9389" started-at="2020-03-31T08:22:11Z" finished-at="2020-03-31T08:22:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="compareCostsFromDifferentSources()[pri:0, instance:test.MainTest@79b4d0f]" name="compareCostsFromDifferentSources" duration-ms="46763" started-at="2020-03-30T08:57:54Z" description="compare the cost of rent in the received letter and on the website" finished-at="2020-03-30T08:58:41Z">
+        <test-method status="PASS" signature="compareCostsFromDifferentSources()[pri:0, instance:test.MainTest@3b81a1bc]" name="compareCostsFromDifferentSources" duration-ms="46568" started-at="2020-03-31T08:22:20Z" description="compare the cost of rent in the received letter and on the website" finished-at="2020-03-31T08:23:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- compareCostsFromDifferentSources -->
-        <test-method status="PASS" signature="browserTearDown()[pri:0, instance:test.MainTest@79b4d0f]" name="browserTearDown" is-config="true" duration-ms="1117" started-at="2020-03-30T08:58:41Z" finished-at="2020-03-30T08:58:42Z">
+        <test-method status="PASS" signature="browserTearDown()[pri:0, instance:test.MainTest@3b81a1bc]" name="browserTearDown" is-config="true" duration-ms="1189" started-at="2020-03-31T08:23:07Z" finished-at="2020-03-31T08:23:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserTearDown -->

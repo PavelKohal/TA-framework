@@ -1,6 +1,8 @@
 package page;
 
 import model.CloudPlatformSpecification;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -14,6 +16,7 @@ public class CalculatorPage {
 
     WebDriver driver;
     public static String costOnPage;
+    private final Logger logger = LogManager.getRootLogger();
 
     public CalculatorPage(WebDriver driver) {
         this.driver = driver;
@@ -70,6 +73,7 @@ public class CalculatorPage {
         driver.switchTo().frame(firstFrame).switchTo().frame(secondFrame);
         new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(computeEngineButton));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", computeEngineButton);
+        logger.info("Computer engine button was clicked.");
         return this;
     }
 
@@ -87,6 +91,7 @@ public class CalculatorPage {
         expandSelectionOptionsAndSelectDesired(localSSDSelect, testModel.getLocalSSD());
         selectDatacenterLocation(datacenterLocationSelect, testModel.getDatacenterLocation());
         selectCommittedUsage(committedUsageSelect, testModel.getCommittedUsage());
+        logger.info("Required fields are filled");
         clickButton(buttonAddToEstimate);
         costOnPage = new WebDriverWait(driver, 10).until(ExpectedConditions
                 .visibilityOf(costOnPageDOMElement)).getText();

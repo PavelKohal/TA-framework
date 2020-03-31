@@ -1,5 +1,7 @@
 package page;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class GoogleCloudMainPage {
 
     private WebDriver driver;
+    private final Logger logger = LogManager.getRootLogger();
 
     private static final String HOMEPAGE_URL = "https://cloud.google.com/";
     private static final String REQUEST_TEXT = "Google Cloud Platform Pricing Calculator";
@@ -30,6 +33,7 @@ public class GoogleCloudMainPage {
     public GoogleCloudMainPage openHomePage() {
         driver.get(HOMEPAGE_URL);
         new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(searchButton));
+        logger.info("Open page " + HOMEPAGE_URL);
         return this;
     }
 
