@@ -40,6 +40,7 @@ public class GoogleCloudMainPage {
     public SearchResultsPage fillInSearchInputLine() {
         searchButton.click();
         searchInputLine.sendKeys(REQUEST_TEXT + Keys.ENTER);
+        logger.info("Fill request " + REQUEST_TEXT + " in search input");
         return new SearchResultsPage(driver);
     }
 }

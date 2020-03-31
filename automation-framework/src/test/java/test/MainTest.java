@@ -13,7 +13,7 @@ public class MainTest extends CommonConditions {
     @Test (description = "compare the cost of rent in the received letter and on the website")
     public void compareCostsFromDifferentSources() {
         CloudPlatformSpecification testModel = SpecificationCreator.withCredentialsFromProperty();
-        TemporaryEmailPage resultPage = new GoogleCloudMainPage(driver)
+        boolean expectedResult = new GoogleCloudMainPage(driver)
                 .openHomePage()
                 .fillInSearchInputLine()
                 .selectDesiredSearchResult()
@@ -21,7 +21,9 @@ public class MainTest extends CommonConditions {
                 .fillInRequiredData(testModel)
                 .clickEmailEstimateButton()
                 .getEmail()
-                .addEmail();
-        Assert.assertTrue(CalculatorPage.costOnPage.contains(resultPage.getCostInLetter()));
+                .addEmail()
+                .isCostCorrect();
+
+        Assert.assertTrue(expectedResult);
     }
 }

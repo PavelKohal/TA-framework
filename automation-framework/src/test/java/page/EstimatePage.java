@@ -1,5 +1,6 @@
 package page;
 
+import model.CloudPlatformSpecification;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -45,7 +46,7 @@ public class EstimatePage {
         new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(emailEstimateButton));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", emailEstimateButton);
         ((JavascriptExecutor) driver).executeScript("window.open()");
-        ArrayList<String> browserPages = new ArrayList<String>(driver.getWindowHandles());
+        ArrayList<String> browserPages = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(browserPages.get(1));
         return new TemporaryEmailPage(driver);
     }
@@ -61,5 +62,9 @@ public class EstimatePage {
         ArrayList<String> browserPages = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(browserPages.get(1));
         return new TemporaryEmailPage(driver);
+    }
+
+    public boolean isResultEqualsToManualResult(CloudPlatformSpecification testModel) {
+        return CalculatorPage.costOnPage.contains(testModel.getManualTestResult());
     }
 }

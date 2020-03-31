@@ -1,9 +1,8 @@
-2020-03-31 12:32:18,004 INFO  [main] Open page https://cloud.google.com/
-2020-03-31 12:32:19,531 INFO  [main] Looking for link to page with calculator...
-2020-03-31 12:32:34,253 INFO  [main] Computer engine button was clicked.
-2020-03-31 12:32:40,972 INFO  [main] Required fields are filled
-2020-03-31 12:32:44,362 INFO  [main] The page with the random email generator is open
-2020-03-31 12:33:08,944 INFO  [main] Open page https://cloud.google.com/
-2020-03-31 12:33:09,853 INFO  [main] Looking for link to page with calculator...
-2020-03-31 12:33:30,117 INFO  [main] Computer engine button was clicked.
-2020-03-31 12:33:36,771 INFO  [main] Required fields are filled
+2020-03-31 17:57:13,903 INFO  [main] Open page https://cloud.google.com/
+2020-03-31 17:57:15,059 INFO  [main] Fill request Google Cloud Platform Pricing Calculator in search input
+2020-03-31 17:57:15,087 INFO  [main] Looking for link to page with calculator...
+2020-03-31 17:57:22,499 INFO  [main] Check desired search result result
+2020-03-31 17:57:25,555 INFO  [main] Open Google Cloud Calculator Page
+2020-03-31 17:57:37,199 INFO  [main] Open page https://cloud.google.com/
+2020-03-31 17:57:39,007 INFO  [main] Fill request Google Cloud Platform Pricing Calculator in search input
+2020-03-31 17:57:39,008 INFO  [main] Looking for link to page with calculator...

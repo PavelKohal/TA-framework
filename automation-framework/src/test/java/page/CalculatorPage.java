@@ -70,6 +70,7 @@ public class CalculatorPage {
 
 
     public CalculatorPage clickComputerEngineButton() {
+        logger.info("Open Google Cloud Calculator Page");
         driver.switchTo().frame(firstFrame).switchTo().frame(secondFrame);
         new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(computeEngineButton));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", computeEngineButton);
@@ -78,6 +79,7 @@ public class CalculatorPage {
     }
 
     public EstimatePage fillInRequiredData(CloudPlatformSpecification testModel) {
+        logger.info("Start to fill in required data");
         new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(inputLineNumberOfInstances));
         inputLineNumberOfInstances.sendKeys(testModel.getNumberOfInstances());
         expandSelectionOptionsAndSelectDesired(operationSystemSelect, testModel.getOperationSystem());
@@ -93,44 +95,40 @@ public class CalculatorPage {
         selectCommittedUsage(committedUsageSelect, testModel.getCommittedUsage());
         logger.info("Required fields are filled");
         clickButton(buttonAddToEstimate);
+        logger.info("AddToEstimate button is clicked");
         costOnPage = new WebDriverWait(driver, 10).until(ExpectedConditions
                 .visibilityOf(costOnPageDOMElement)).getText();
         return new EstimatePage(driver);
     }
 
-    public CalculatorPage expandSelectionOptionsAndSelectDesired(WebElement element, String textElement) {
+    public void expandSelectionOptionsAndSelectDesired(WebElement element, String textElement) {
         expandSelectToSearchForOption(element);
         By elementLocator = By.xpath(String.format("//md-option/div[contains(text(), '%s')]", textElement));
         findAndSelectDesiredOption(elementLocator);
-        return this;
     }
 
-    public CalculatorPage selectDesiredMachineClass(WebElement element, String textElement) {
+    public void selectDesiredMachineClass(WebElement element, String textElement) {
         expandSelectToSearchForOption(element);
         By elementLocator = By.xpath(String.format("//div[@id='select_container_72']//div[contains(text(), '%s')]", textElement));
         findAndSelectDesiredOption(elementLocator);
-        return this;
     }
 
-    public CalculatorPage selectDesiredNumberOfGPU(WebElement element, String textElement) {
+    public void selectDesiredNumberOfGPU(WebElement element, String textElement) {
         expandSelectToSearchForOption(element);
         By elementLocator = By.xpath(String.format("//div[@id='select_container_329']//div[contains(text(), '%s')]", textElement));
         findAndSelectDesiredOption(elementLocator);
-        return this;
     }
 
-    public CalculatorPage selectDatacenterLocation(WebElement element, String textElement) {
+    public void selectDatacenterLocation(WebElement element, String textElement) {
         expandSelectToSearchForOption(element);
         By elementLocator = By.xpath(String.format("//div[@id='select_container_83']//div[contains(text(), '%s')]", textElement));
         findAndSelectDesiredOption(elementLocator);
-        return this;
     }
 
-    public CalculatorPage selectCommittedUsage(WebElement element, String textElement) {
+    public void selectCommittedUsage(WebElement element, String textElement) {
         expandSelectToSearchForOption(element);
         By elementLocator = By.xpath(String.format("//div[@id='select_container_90']//div[contains(text(), '%s')]", textElement));
         findAndSelectDesiredOption(elementLocator);
-        return this;
     }
 
     public void expandSelectToSearchForOption(WebElement element) {

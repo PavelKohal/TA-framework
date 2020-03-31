@@ -30,7 +30,8 @@ public class TemporaryEmailPage {
                 .until(ExpectedConditions.visibilityOfElementLocated(MAIL_LOCATOR));
         new WebDriverWait(driver, 20).until(ExpectedConditions.attributeToBeNotEmpty(mail, "value"));
         String emailStringValue = mail.getAttribute("value");
-        ArrayList<String> browserPages = new ArrayList<String>(driver.getWindowHandles());
+        logger.info("New email address is generated");
+        ArrayList<String> browserPages = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(browserPages.get(0));
         return new EstimatePage(driver, emailStringValue);
     }
@@ -44,5 +45,9 @@ public class TemporaryEmailPage {
         String costInLetter = costFromMail.getText();
         String[] array = costInLetter.split(":");
         return  array[1].trim();
+    }
+
+    public boolean isCostCorrect() {
+        return CalculatorPage.costOnPage.contains(getCostInLetter());
     }
 }

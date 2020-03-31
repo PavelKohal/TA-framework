@@ -25,6 +25,7 @@ public class SearchResultsPage {
     public CalculatorPage selectDesiredSearchResult() {
         logger.info("Looking for link to page with calculator...");
         new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(desiredSearchResult));
+        logger.info("Check desired search result result");
         desiredSearchResult.click();
         return new CalculatorPage(driver);
     }
