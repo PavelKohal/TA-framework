@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CalculatorPage extends AbstractPage{
 
-    public static String costOnPage;
+    private static String costOnPage;
     private final Logger logger = LogManager.getRootLogger();
 
     public CalculatorPage(WebDriver driver) {
@@ -22,56 +22,60 @@ public class CalculatorPage extends AbstractPage{
         PageFactory.initElements(driver, this);
     }
 
+    public static String getCostOnPage() {
+        return costOnPage;
+    }
+
     @FindBy (xpath = "//*[@id='cloud-site']/devsite-iframe/iframe")
-    WebElement firstFrame;
+    private WebElement firstFrame;
 
     @FindBy (id = "myFrame")
-    WebElement secondFrame;
+    private WebElement secondFrame;
 
     @FindBy (xpath = "//*[@id='mainForm']//div[@title='Compute Engine']")
-    WebElement computeEngineButton;
+    private WebElement computeEngineButton;
 
     @FindBy (id = "input_56")
-    WebElement inputLineNumberOfInstances;
+    private WebElement inputLineNumberOfInstances;
 
     @FindBy (id = "select_value_label_49")
-    WebElement operationSystemSelect;
+    private WebElement operationSystemSelect;
 
     @FindBy (id = "select_value_label_50")
-    WebElement machineClassSelect;
+    private WebElement machineClassSelect;
 
     @FindBy (id = "select_value_label_53")
-    WebElement machineTypeSelect;
+    private WebElement machineTypeSelect;
 
     @FindBy (xpath = "//md-checkbox[@aria-label='Add GPUs']")
-    WebElement addGPUChexkbox;
+    private WebElement addGPUChexkbox;
 
     @FindBy (id = "select_value_label_327")
-    WebElement numberOfGPUsSelect;
+    private WebElement numberOfGPUsSelect;
 
     @FindBy (id = "select_value_label_328")
-    WebElement typeOfGPUSelect;
+    private WebElement typeOfGPUSelect;
 
     @FindBy (id = "select_value_label_167")
-    WebElement localSSDSelect;
+    private WebElement localSSDSelect;
 
     @FindBy (id = "select_value_label_54")
-    WebElement datacenterLocationSelect;
+    private WebElement datacenterLocationSelect;
 
     @FindBy (id = "select_value_label_55")
-    WebElement committedUsageSelect;
+    private WebElement committedUsageSelect;
 
     @FindBy (xpath = "//button[@aria-label='Add to Estimate']")
-    WebElement buttonAddToEstimate;
+    private WebElement buttonAddToEstimate;
 
     @FindBy (xpath = "//*[@id='resultBlock']//h2[@class='md-title']")
-    WebElement costOnPageDOMElement;
+    private WebElement costOnPageDOMElement;
 
 
     public CalculatorPage clickComputerEngineButton() {
         logger.info("Open Google Cloud Calculator Page");
         driver.switchTo().frame(firstFrame).switchTo().frame(secondFrame);
-        new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(computeEngineButton));
+        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS).until(ExpectedConditions.elementToBeClickable(computeEngineButton));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", computeEngineButton);
         logger.info("Computer engine button was clicked.");
         return this;
@@ -79,7 +83,7 @@ public class CalculatorPage extends AbstractPage{
 
     public EstimatePage fillInRequiredData(CloudPlatformSpecification testModel) {
         logger.info("Start to fill in required data");
-        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(inputLineNumberOfInstances));
+        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS).until(ExpectedConditions.visibilityOf(inputLineNumberOfInstances));
         inputLineNumberOfInstances.sendKeys(testModel.getNumberOfInstances());
         expandSelectionOptionsAndSelectDesired(operationSystemSelect, testModel.getOperationSystem());
         selectDesiredMachineClass(machineClassSelect, testModel.getMachineClass());
@@ -95,7 +99,7 @@ public class CalculatorPage extends AbstractPage{
         logger.info("Required fields are filled");
         clickButton(buttonAddToEstimate);
         logger.info("AddToEstimate button is clicked");
-        costOnPage = new WebDriverWait(driver, 10).until(ExpectedConditions
+        costOnPage = new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
                 .visibilityOf(costOnPageDOMElement)).getText();
         return new EstimatePage(driver);
     }
@@ -131,12 +135,12 @@ public class CalculatorPage extends AbstractPage{
     }
 
     public void expandSelectToSearchForOption(WebElement element) {
-        new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOf(element));
+        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS).until(ExpectedConditions.visibilityOf(element));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
     }
 
     public void findAndSelectDesiredOption(By optionLocator) {
-        WebElement selectOption = new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(optionLocator));
+        WebElement selectOption = new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS).until(ExpectedConditions.visibilityOfElementLocated(optionLocator));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectOption);
     }
 

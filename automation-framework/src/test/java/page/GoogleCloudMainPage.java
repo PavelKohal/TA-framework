@@ -22,14 +22,14 @@ public class GoogleCloudMainPage extends AbstractPage{
     }
 
     @FindBy (xpath = "//div[@class='devsite-searchbox']")
-    WebElement searchButton;
+    private WebElement searchButton;
 
     @FindBy(name = "q")
-    WebElement searchInputLine;
+    private WebElement searchInputLine;
 
     public GoogleCloudMainPage openHomePage() {
         driver.get(HOMEPAGE_URL);
-        new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(searchButton));
+        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS).until(ExpectedConditions.elementToBeClickable(searchButton));
         logger.info("Open page " + HOMEPAGE_URL);
         return this;
     }

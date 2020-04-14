@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class EstimatePage extends AbstractPage {
 
-    String email;
+    private String email;
 
     public EstimatePage(WebDriver driver) {
         super(driver);
@@ -27,22 +27,22 @@ public class EstimatePage extends AbstractPage {
     }
 
     @FindBy (xpath = "//*[@id='email_quote']")
-    WebElement emailEstimateButton;
+    private WebElement emailEstimateButton;
 
     @FindBy (xpath = "//*[@id='cloud-site']/devsite-iframe/iframe")
-    WebElement firstFrameEmail;
+    private WebElement firstFrameEmail;
 
     @FindBy (xpath = "//*[@id='myFrame']")
-    WebElement secondFrameEmail;
+    private WebElement secondFrameEmail;
 
     @FindBy (xpath = "//input[@type='email']")
-    WebElement emailField;
+    private WebElement emailField;
 
     @FindBy (xpath = "//button[@aria-label='Send Email']")
-    WebElement emailSendButton;
+    private WebElement emailSendButton;
 
     public TemporaryEmailPage clickEmailEstimateButton() {
-        new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(emailEstimateButton));
+        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS).until(ExpectedConditions.visibilityOf(emailEstimateButton));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", emailEstimateButton);
         ((JavascriptExecutor) driver).executeScript("window.open()");
         ArrayList<String> browserPages = new ArrayList<>(driver.getWindowHandles());
@@ -52,18 +52,16 @@ public class EstimatePage extends AbstractPage {
 
     public TemporaryEmailPage addEmail() {
         driver.switchTo().frame(firstFrameEmail).switchTo().frame(secondFrameEmail);
-        new WebDriverWait(driver, 10)
-                .until(ExpectedConditions.visibilityOf(emailField));
+        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS).until(ExpectedConditions.visibilityOf(emailField));
         emailField.sendKeys(email);
-        new WebDriverWait(driver, 60)
-                .until(ExpectedConditions.elementToBeClickable(emailSendButton));
+        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS).until(ExpectedConditions.elementToBeClickable(emailSendButton));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", emailSendButton);
-        ArrayList<String> browserPages = new ArrayList<String>(driver.getWindowHandles());
+        ArrayList<String> browserPages = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(browserPages.get(1));
         return new TemporaryEmailPage(driver);
     }
 
     public boolean isResultEqualsToManualResult(CloudPlatformSpecification testModel) {
-        return CalculatorPage.costOnPage.contains(testModel.getManualTestResult());
+        return CalculatorPage.getCostOnPage().contains(testModel.getManualTestResult());
     }
 }

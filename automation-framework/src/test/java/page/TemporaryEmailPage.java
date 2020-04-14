@@ -14,10 +14,11 @@ import java.util.ArrayList;
 public class TemporaryEmailPage extends AbstractPage {
 
     private final Logger logger = LogManager.getRootLogger();
-    public static final String TEMPORARY_MAIL_URL = "https://10minutemail.com";
-    public static final By MAIL_LOCATOR = By.xpath("//*[@id='mail_address']");
-    public static final By EXPECTED_MAIL_LOCATOR = By.xpath("//*[@id='mail_messages_content']//div[@class = 'small_message_icon_box']");
-    public static final By COST_FROM_MAIL_LOCATOR = By.xpath("//*[@id='mobilepadding']/td/h2");
+    private static final String TEMPORARY_MAIL_URL = "https://10minutemail.com";
+
+    private static final By MAIL_LOCATOR = By.xpath("//*[@id='mail_address']");
+    private static final By EXPECTED_MAIL_LOCATOR = By.xpath("//*[@id='mail_messages_content']//div[@class = 'small_message_icon_box']");
+    private static final By COST_FROM_MAIL_LOCATOR = By.xpath("//*[@id='mobilepadding']/td/h2");
 
     public TemporaryEmailPage(WebDriver driver) {
         super(driver);
@@ -27,9 +28,9 @@ public class TemporaryEmailPage extends AbstractPage {
     public EstimatePage getEmail() {
         driver.get(TEMPORARY_MAIL_URL);
         logger.info("The page with the random email generator is open");
-        WebElement mail = new WebDriverWait(driver, 20)
+        WebElement mail = new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
                 .until(ExpectedConditions.visibilityOfElementLocated(MAIL_LOCATOR));
-        new WebDriverWait(driver, 20).until(ExpectedConditions.attributeToBeNotEmpty(mail, "value"));
+        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS).until(ExpectedConditions.attributeToBeNotEmpty(mail, "value"));
         String emailStringValue = mail.getAttribute("value");
         logger.info("New email address is generated");
         ArrayList<String> browserPages = new ArrayList<>(driver.getWindowHandles());
@@ -41,7 +42,7 @@ public class TemporaryEmailPage extends AbstractPage {
         WebElement expectedMail = new WebDriverWait(driver, 180)
                 .until(ExpectedConditions.elementToBeClickable(EXPECTED_MAIL_LOCATOR));
         expectedMail.click();
-        WebElement costFromMail = new WebDriverWait(driver, 20)
+        WebElement costFromMail = new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
                 .until(ExpectedConditions.presenceOfElementLocated(COST_FROM_MAIL_LOCATOR));
         logger.info("Cost from email is recieved");
         String costInLetter = costFromMail.getText();
@@ -50,6 +51,6 @@ public class TemporaryEmailPage extends AbstractPage {
     }
 
     public boolean isCostCorrect() {
-        return CalculatorPage.costOnPage.contains(getCostInLetter());
+        return CalculatorPage.getCostOnPage().contains(getCostInLetter());
     }
 }

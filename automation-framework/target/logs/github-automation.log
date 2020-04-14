@@ -1,21 +1,21 @@
-2020-04-14 11:02:08,752 INFO  [main] Open page https://cloud.google.com/
-2020-04-14 11:02:09,993 INFO  [main] Fill request Google Cloud Platform Pricing Calculator in search input
-2020-04-14 11:02:10,013 INFO  [main] Looking for link to page with calculator...
-2020-04-14 11:02:14,517 INFO  [main] Check desired search result result
-2020-04-14 11:02:21,357 INFO  [main] Open Google Cloud Calculator Page
-2020-04-14 11:02:26,336 INFO  [main] Computer engine button was clicked.
-2020-04-14 11:02:26,337 INFO  [main] Start to fill in required data
-2020-04-14 11:02:33,128 INFO  [main] Required fields are filled
-2020-04-14 11:02:33,635 INFO  [main] AddToEstimate button is clicked
-2020-04-14 11:02:36,276 INFO  [main] The page with the random email generator is open
-2020-04-14 11:02:37,746 INFO  [main] New email address is generated
-2020-04-14 11:02:48,006 INFO  [main] Cost from email is recieved
-2020-04-14 11:02:58,462 INFO  [main] Open page https://cloud.google.com/
-2020-04-14 11:02:59,306 INFO  [main] Fill request Google Cloud Platform Pricing Calculator in search input
-2020-04-14 11:02:59,307 INFO  [main] Looking for link to page with calculator...
-2020-04-14 11:03:02,506 INFO  [main] Check desired search result result
-2020-04-14 11:03:09,105 INFO  [main] Open Google Cloud Calculator Page
-2020-04-14 11:03:15,059 INFO  [main] Computer engine button was clicked.
-2020-04-14 11:03:15,059 INFO  [main] Start to fill in required data
-2020-04-14 11:03:21,983 INFO  [main] Required fields are filled
-2020-04-14 11:03:22,530 INFO  [main] AddToEstimate button is clicked
+2020-04-14 11:18:51,784 INFO  [main] Open page https://cloud.google.com/
+2020-04-14 11:18:52,942 INFO  [main] Fill request Google Cloud Platform Pricing Calculator in search input
+2020-04-14 11:18:52,988 INFO  [main] Looking for link to page with calculator...
+2020-04-14 11:18:56,237 INFO  [main] Check desired search result
+2020-04-14 11:19:03,628 INFO  [main] Open Google Cloud Calculator Page
+2020-04-14 11:19:09,199 INFO  [main] Computer engine button was clicked.
+2020-04-14 11:19:09,200 INFO  [main] Start to fill in required data
+2020-04-14 11:19:15,902 INFO  [main] Required fields are filled
+2020-04-14 11:19:16,389 INFO  [main] AddToEstimate button is clicked
+2020-04-14 11:19:19,244 INFO  [main] The page with the random email generator is open
+2020-04-14 11:19:20,581 INFO  [main] New email address is generated
+2020-04-14 11:19:30,667 INFO  [main] Cost from email is recieved
+2020-04-14 11:19:42,885 INFO  [main] Open page https://cloud.google.com/
+2020-04-14 11:19:44,368 INFO  [main] Fill request Google Cloud Platform Pricing Calculator in search input
+2020-04-14 11:19:44,369 INFO  [main] Looking for link to page with calculator...
+2020-04-14 11:19:47,280 INFO  [main] Check desired search result
+2020-04-14 11:19:53,857 INFO  [main] Open Google Cloud Calculator Page
+2020-04-14 11:19:58,301 INFO  [main] Computer engine button was clicked.
+2020-04-14 11:19:58,302 INFO  [main] Start to fill in required data
+2020-04-14 11:20:05,093 INFO  [main] Required fields are filled
+2020-04-14 11:20:05,843 INFO  [main] AddToEstimate button is clicked

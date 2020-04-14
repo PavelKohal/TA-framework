@@ -19,12 +19,12 @@ public class SearchResultsPage extends AbstractPage{
     }
 
     @FindBy (xpath = "//*[@id='___gcse_0']//div[@class='gs-title']//b[text()='Google Cloud Platform Pricing Calculator']")
-    WebElement desiredSearchResult;
+    private WebElement desiredSearchResult;
 
     public CalculatorPage selectDesiredSearchResult() {
         logger.info("Looking for link to page with calculator...");
-        new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(desiredSearchResult));
-        logger.info("Check desired search result result");
+        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS).until(ExpectedConditions.elementToBeClickable(desiredSearchResult));
+        logger.info("Check desired search result");
         desiredSearchResult.click();
         return new CalculatorPage(driver);
     }
