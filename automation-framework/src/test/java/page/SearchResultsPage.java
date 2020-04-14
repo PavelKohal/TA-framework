@@ -9,13 +9,12 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class SearchResultsPage {
+public class SearchResultsPage extends AbstractPage{
 
-    private WebDriver driver;
     private final Logger logger = LogManager.getRootLogger();
 
     public SearchResultsPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
         PageFactory.initElements(driver, this);
     }
 

@@ -5,14 +5,14 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 
-public class TemporaryEmailPage {
+public class TemporaryEmailPage extends AbstractPage {
 
-    WebDriver driver;
     private final Logger logger = LogManager.getRootLogger();
     public static final String TEMPORARY_MAIL_URL = "https://10minutemail.com";
     public static final By MAIL_LOCATOR = By.xpath("//*[@id='mail_address']");
@@ -20,7 +20,8 @@ public class TemporaryEmailPage {
     public static final By COST_FROM_MAIL_LOCATOR = By.xpath("//*[@id='mobilepadding']/td/h2");
 
     public TemporaryEmailPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
+        PageFactory.initElements(driver, this);
     }
 
     public EstimatePage getEmail() {
@@ -42,9 +43,10 @@ public class TemporaryEmailPage {
         expectedMail.click();
         WebElement costFromMail = new WebDriverWait(driver, 20)
                 .until(ExpectedConditions.presenceOfElementLocated(COST_FROM_MAIL_LOCATOR));
+        logger.info("Cost from email is recieved");
         String costInLetter = costFromMail.getText();
         String[] array = costInLetter.split(":");
-        return  array[1].trim();
+        return array[1].trim();
     }
 
     public boolean isCostCorrect() {

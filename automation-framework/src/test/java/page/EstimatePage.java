@@ -11,18 +11,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 
-public class EstimatePage {
+public class EstimatePage extends AbstractPage {
 
-    WebDriver driver;
     String email;
 
     public EstimatePage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
         PageFactory.initElements(driver, this);
     }
 
     public EstimatePage(WebDriver driver, String email) {
-        this.driver = driver;
+        super(driver);
         this.email = email;
         PageFactory.initElements(driver, this);
     }

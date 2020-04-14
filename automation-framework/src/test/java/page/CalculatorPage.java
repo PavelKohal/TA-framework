@@ -12,14 +12,13 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class CalculatorPage {
+public class CalculatorPage extends AbstractPage{
 
-    WebDriver driver;
     public static String costOnPage;
     private final Logger logger = LogManager.getRootLogger();
 
     public CalculatorPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
         PageFactory.initElements(driver, this);
     }
 
@@ -32,34 +31,34 @@ public class CalculatorPage {
     @FindBy (xpath = "//*[@id='mainForm']//div[@title='Compute Engine']")
     WebElement computeEngineButton;
 
-    @FindBy (id = "input_55")
+    @FindBy (id = "input_56")
     WebElement inputLineNumberOfInstances;
 
-    @FindBy (id = "select_value_label_48")
+    @FindBy (id = "select_value_label_49")
     WebElement operationSystemSelect;
 
-    @FindBy (id = "select_value_label_49")
+    @FindBy (id = "select_value_label_50")
     WebElement machineClassSelect;
 
-    @FindBy (id = "select_value_label_52")
+    @FindBy (id = "select_value_label_53")
     WebElement machineTypeSelect;
 
     @FindBy (xpath = "//md-checkbox[@aria-label='Add GPUs']")
     WebElement addGPUChexkbox;
 
-    @FindBy (id = "select_value_label_326")
+    @FindBy (id = "select_value_label_327")
     WebElement numberOfGPUsSelect;
 
-    @FindBy (id = "select_value_label_327")
+    @FindBy (id = "select_value_label_328")
     WebElement typeOfGPUSelect;
 
-    @FindBy (id = "select_value_label_166")
+    @FindBy (id = "select_value_label_167")
     WebElement localSSDSelect;
 
-    @FindBy (id = "select_value_label_53")
+    @FindBy (id = "select_value_label_54")
     WebElement datacenterLocationSelect;
 
-    @FindBy (id = "select_value_label_54")
+    @FindBy (id = "select_value_label_55")
     WebElement committedUsageSelect;
 
     @FindBy (xpath = "//button[@aria-label='Add to Estimate']")
@@ -109,25 +108,25 @@ public class CalculatorPage {
 
     public void selectDesiredMachineClass(WebElement element, String textElement) {
         expandSelectToSearchForOption(element);
-        By elementLocator = By.xpath(String.format("//div[@id='select_container_72']//div[contains(text(), '%s')]", textElement));
+        By elementLocator = By.xpath(String.format("//div[@id='select_container_73']//div[contains(text(), '%s')]", textElement));
         findAndSelectDesiredOption(elementLocator);
     }
 
     public void selectDesiredNumberOfGPU(WebElement element, String textElement) {
         expandSelectToSearchForOption(element);
-        By elementLocator = By.xpath(String.format("//div[@id='select_container_329']//div[contains(text(), '%s')]", textElement));
+        By elementLocator = By.xpath(String.format("//div[@id='select_container_330']//div[contains(text(), '%s')]", textElement));
         findAndSelectDesiredOption(elementLocator);
     }
 
     public void selectDatacenterLocation(WebElement element, String textElement) {
         expandSelectToSearchForOption(element);
-        By elementLocator = By.xpath(String.format("//div[@id='select_container_83']//div[contains(text(), '%s')]", textElement));
+        By elementLocator = By.xpath(String.format("//div[@id='select_container_84']//div[contains(text(), '%s')]", textElement));
         findAndSelectDesiredOption(elementLocator);
     }
 
     public void selectCommittedUsage(WebElement element, String textElement) {
         expandSelectToSearchForOption(element);
-        By elementLocator = By.xpath(String.format("//div[@id='select_container_90']//div[contains(text(), '%s')]", textElement));
+        By elementLocator = By.xpath(String.format("//div[@id='select_container_91']//div[contains(text(), '%s')]", textElement));
         findAndSelectDesiredOption(elementLocator);
     }
 

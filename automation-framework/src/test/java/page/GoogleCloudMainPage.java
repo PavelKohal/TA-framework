@@ -10,25 +10,22 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class GoogleCloudMainPage {
+public class GoogleCloudMainPage extends AbstractPage{
 
-    private WebDriver driver;
     private final Logger logger = LogManager.getRootLogger();
-
     private static final String HOMEPAGE_URL = "https://cloud.google.com/";
     private static final String REQUEST_TEXT = "Google Cloud Platform Pricing Calculator";
 
+    public GoogleCloudMainPage(WebDriver driver) {
+        super(driver);
+        PageFactory.initElements(driver, this);
+    }
 
     @FindBy (xpath = "//div[@class='devsite-searchbox']")
     WebElement searchButton;
 
     @FindBy(name = "q")
     WebElement searchInputLine;
-
-    public GoogleCloudMainPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-    }
 
     public GoogleCloudMainPage openHomePage() {
         driver.get(HOMEPAGE_URL);
