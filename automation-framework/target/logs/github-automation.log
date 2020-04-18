@@ -1,21 +1,41 @@
-2020-04-14 11:18:51,784 INFO  [main] Open page https://cloud.google.com/
-2020-04-14 11:18:52,942 INFO  [main] Fill request Google Cloud Platform Pricing Calculator in search input
-2020-04-14 11:18:52,988 INFO  [main] Looking for link to page with calculator...
-2020-04-14 11:18:56,237 INFO  [main] Check desired search result
-2020-04-14 11:19:03,628 INFO  [main] Open Google Cloud Calculator Page
-2020-04-14 11:19:09,199 INFO  [main] Computer engine button was clicked.
-2020-04-14 11:19:09,200 INFO  [main] Start to fill in required data
-2020-04-14 11:19:15,902 INFO  [main] Required fields are filled
-2020-04-14 11:19:16,389 INFO  [main] AddToEstimate button is clicked
-2020-04-14 11:19:19,244 INFO  [main] The page with the random email generator is open
-2020-04-14 11:19:20,581 INFO  [main] New email address is generated
-2020-04-14 11:19:30,667 INFO  [main] Cost from email is recieved
-2020-04-14 11:19:42,885 INFO  [main] Open page https://cloud.google.com/
-2020-04-14 11:19:44,368 INFO  [main] Fill request Google Cloud Platform Pricing Calculator in search input
-2020-04-14 11:19:44,369 INFO  [main] Looking for link to page with calculator...
-2020-04-14 11:19:47,280 INFO  [main] Check desired search result
-2020-04-14 11:19:53,857 INFO  [main] Open Google Cloud Calculator Page
-2020-04-14 11:19:58,301 INFO  [main] Computer engine button was clicked.
-2020-04-14 11:19:58,302 INFO  [main] Start to fill in required data
-2020-04-14 11:20:05,093 INFO  [main] Required fields are filled
-2020-04-14 11:20:05,843 INFO  [main] AddToEstimate button is clicked
+2020-04-18 08:27:54,084 INFO  [main] Open page https://cloud.google.com/
+2020-04-18 08:27:55,734 INFO  [main] Fill request Google Cloud Platform Pricing Calculator in search input
+2020-04-18 08:27:55,740 INFO  [main] Looking for link to page with calculator...
+2020-04-18 08:28:03,000 INFO  [main] Check desired search result
+2020-04-18 08:28:12,753 INFO  [main] Open Google Cloud Calculator Page
+2020-04-18 08:28:20,449 INFO  [main] Computer engine button was clicked.
+2020-04-18 08:28:20,450 INFO  [main] Start to fill in required data
+2020-04-18 08:28:20,733 INFO  [main] Number of instances is filled in
+2020-04-18 08:28:21,625 INFO  [main] Operation system is selected
+2020-04-18 08:28:22,443 INFO  [main] Machine class is selected
+2020-04-18 08:28:23,357 INFO  [main] Machine type is selected
+2020-04-18 08:28:23,858 INFO  [main] Add GPU checkbox is checked
+2020-04-18 08:28:24,918 INFO  [main] Number of GPU is selected
+2020-04-18 08:28:25,786 INFO  [main] Type of GPU is selected
+2020-04-18 08:28:26,612 INFO  [main] Local SSD is selected
+2020-04-18 08:28:27,447 INFO  [main] Datacenter location is selected
+2020-04-18 08:28:28,330 INFO  [main] Committed usage is selected
+2020-04-18 08:28:28,331 INFO  [main] Required fields are filled
+2020-04-18 08:28:29,157 INFO  [main] AddToEstimate button is clicked
+2020-04-18 08:28:32,341 INFO  [main] The page with the random email generator is open
+2020-04-18 08:28:35,060 INFO  [main] New email address is generated
+2020-04-18 08:28:44,077 INFO  [main] Cost from email is recieved
+2020-04-18 08:28:54,288 INFO  [main] Open page https://cloud.google.com/
+2020-04-18 08:28:55,232 INFO  [main] Fill request Google Cloud Platform Pricing Calculator in search input
+2020-04-18 08:28:55,233 INFO  [main] Looking for link to page with calculator...
+2020-04-18 08:29:01,402 INFO  [main] Check desired search result
+2020-04-18 08:29:07,881 INFO  [main] Open Google Cloud Calculator Page
+2020-04-18 08:29:12,978 INFO  [main] Computer engine button was clicked.
+2020-04-18 08:29:12,979 INFO  [main] Start to fill in required data
+2020-04-18 08:29:13,222 INFO  [main] Number of instances is filled in
+2020-04-18 08:29:14,027 INFO  [main] Operation system is selected
+2020-04-18 08:29:14,793 INFO  [main] Machine class is selected
+2020-04-18 08:29:15,566 INFO  [main] Machine type is selected
+2020-04-18 08:29:15,809 INFO  [main] Add GPU checkbox is checked
+2020-04-18 08:29:16,712 INFO  [main] Number of GPU is selected
+2020-04-18 08:29:17,529 INFO  [main] Type of GPU is selected
+2020-04-18 08:29:18,331 INFO  [main] Local SSD is selected
+2020-04-18 08:29:19,125 INFO  [main] Datacenter location is selected
+2020-04-18 08:29:19,934 INFO  [main] Committed usage is selected
+2020-04-18 08:29:19,934 INFO  [main] Required fields are filled
+2020-04-18 08:29:20,482 INFO  [main] AddToEstimate button is clicked

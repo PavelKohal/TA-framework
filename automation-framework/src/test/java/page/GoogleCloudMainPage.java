@@ -29,7 +29,7 @@ public class GoogleCloudMainPage extends AbstractPage{
 
     public GoogleCloudMainPage openHomePage() {
         driver.get(HOMEPAGE_URL);
-        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS).until(ExpectedConditions.elementToBeClickable(searchButton));
+        new WebDriverWait(driver, 120).until(ExpectedConditions.elementToBeClickable(searchButton));
         logger.info("Open page " + HOMEPAGE_URL);
         return this;
     }

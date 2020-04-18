@@ -3,7 +3,7 @@
 <suite name="Smoke" verbose="1">
     <test name="compareEstimatedCostAndCostFromManualTest">
         <classes>
-            <class name="test.SmokeTest"/>
+            <class name="test.SmokeTest" />
         </classes>
     </test>
 </suite>

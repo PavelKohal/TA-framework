@@ -74,6 +74,7 @@ public class CalculatorPage extends AbstractPage{
 
     public CalculatorPage clickComputerEngineButton() {
         logger.info("Open Google Cloud Calculator Page");
+        driver.switchTo().defaultContent();
         driver.switchTo().frame(firstFrame).switchTo().frame(secondFrame);
         new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS).until(ExpectedConditions.elementToBeClickable(computeEngineButton));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", computeEngineButton);
@@ -85,17 +86,27 @@ public class CalculatorPage extends AbstractPage{
         logger.info("Start to fill in required data");
         new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS).until(ExpectedConditions.visibilityOf(inputLineNumberOfInstances));
         inputLineNumberOfInstances.sendKeys(testModel.getNumberOfInstances());
+        logger.info("Number of instances is filled in");
         expandSelectionOptionsAndSelectDesired(operationSystemSelect, testModel.getOperationSystem());
+        logger.info("Operation system is selected");
         selectDesiredMachineClass(machineClassSelect, testModel.getMachineClass());
+        logger.info("Machine class is selected");
         expandSelectionOptionsAndSelectDesired(machineTypeSelect, testModel.getMachineType());
+        logger.info("Machine type is selected");
         if (testModel.getAddGPU().equals("on")) {
             clickCheckbox(addGPUChexkbox);
+            logger.info("Add GPU checkbox is checked");
         }
         selectDesiredNumberOfGPU(numberOfGPUsSelect, testModel.getNumberGPU());
+        logger.info("Number of GPU is selected");
         expandSelectionOptionsAndSelectDesired(typeOfGPUSelect, testModel.getGPUType());
+        logger.info("Type of GPU is selected");
         expandSelectionOptionsAndSelectDesired(localSSDSelect, testModel.getLocalSSD());
+        logger.info("Local SSD is selected");
         selectDatacenterLocation(datacenterLocationSelect, testModel.getDatacenterLocation());
+        logger.info("Datacenter location is selected");
         selectCommittedUsage(committedUsageSelect, testModel.getCommittedUsage());
+        logger.info("Committed usage is selected");
         logger.info("Required fields are filled");
         clickButton(buttonAddToEstimate);
         logger.info("AddToEstimate button is clicked");
